@@ -26,7 +26,7 @@ echo "Changed."
 echo ""
 
 #Enable I2C
-echo "dtparam=i2c_arm=on" >> /boot/config.txt
+echo "dtparam=i2c_arm=on" >> /boot/firmware/config.txt
 echo "i2c-dev" >> /etc/modules
 
 
