@@ -1,8 +1,6 @@
 #!/bin/bash
 
 #Add user
-echo "Change the password for the administrative user (pi)"
-passwd pi
 echo "Creating the user that runs the experiment (eve)"
 adduser eve
 adduser eve pi
@@ -10,20 +8,7 @@ adduser eve sudo
 adduser eve gpio
 adduser eve i2c
 
-#Change the timezone
-echo -n "Enter the timezone: "
-read timez
-mv /etc/localtime /etc/localtime.backup
-ln -sf /usr/share/zoneinfo/$timez /etc/localtime
-echo "Changed."
-echo ""
 
-#Change the hostname
-read -r -p "Enter the Hostname (Network Name) of the Device: " hostn
-hostnamectl set-hostname $hostn
-
-echo "Changed."
-echo ""
 
 #Enable I2C
 echo "dtparam=i2c_arm=on" >> /boot/firmware/config.txt
