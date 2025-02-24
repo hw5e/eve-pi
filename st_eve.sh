@@ -37,6 +37,8 @@ systemctl enable eve_webui
 #Setup WebUI
 /eve/webui/tools/init.py --no-npm
 
+cp /eve/scripts/live/sample-conf.ini /eve/scripts/live/eve-conf.ini
+
 #Reboot
 echo ""
 echo ""
