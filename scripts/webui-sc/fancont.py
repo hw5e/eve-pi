@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/eve/venv/bin/python3
 
 from board import SCL, SDA
 import busio

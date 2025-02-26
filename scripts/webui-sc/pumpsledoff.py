@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/eve/venv/bin/python3
+
 """ Vishhvaan's Test Script """
 
 import time
