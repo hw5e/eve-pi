@@ -28,7 +28,7 @@ apt install -y git python3 python3-pip python3-dev python3-venv libatlas-base-de
 python3 -m venv /eve/venv
 
 umask 022
-/eve/venv/bin/pip3 install adafruit-circuitpython-ads1x15 adafruit-circuitpython-mcp230xx adafruit-circuitpython-onewire adafruit-circuitpython-ds18x20 adafruit-circuitpython-pca9685 numpy slackclient==1.3.2 pandas matplotlib configparser tornado dash
+/eve/venv/bin/pip3 install adafruit-circuitpython-ads1x15 adafruit-circuitpython-mcp230xx adafruit-circuitpython-onewire adafruit-circuitpython-ds18x20 adafruit-circuitpython-pca9685 numpy slackclient==1.3.2 pandas matplotlib configparser tornado dash scipy w1thermsensor
 
 
 #Copy Service to Location
