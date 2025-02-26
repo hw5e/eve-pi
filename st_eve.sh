@@ -14,18 +14,22 @@ adduser eve i2c
 echo "dtparam=i2c_arm=on" >> /boot/firmware/config.txt
 echo "i2c-dev" >> /etc/modules
 
-
-#Install Packages
-apt update -y && apt upgrade -y
-apt install -y git python3 python3-pip python3-dev libatlas-base-dev
-#apt install -y nfs-kernel-server vim tmux
-
-umask 022
-pip3 install --break-system-packages adafruit-circuitpython-ads1x15 adafruit-circuitpython-mcp230xx adafruit-circuitpython-onewire adafruit-circuitpython-ds18x20 adafruit-circuitpython-pca9685 numpy slackclient==1.3.2 pandas matplotlib configparser tornado dash
-
 #Git Clone Repo
 mkdir /eve
 git clone https://github.com/hw5e/eve-pi.git /eve -b test
+
+
+
+#Install Packages
+apt update -y && apt upgrade -y
+apt install -y git python3 python3-pip python3-dev python3-venv libatlas-base-dev
+#apt install -y nfs-kernel-server vim tmux
+
+python3 -m venv /eve/venv
+
+umask 022
+/eve/venv/bin/pip3 install adafruit-circuitpython-ads1x15 adafruit-circuitpython-mcp230xx adafruit-circuitpython-onewire adafruit-circuitpython-ds18x20 adafruit-circuitpython-pca9685 numpy slackclient==1.3.2 pandas matplotlib configparser tornado dash
+
 
 #Copy Service to Location
 cp /eve/webui/eve_webui.service /lib/systemd/system/eve_webui.service
