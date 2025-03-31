@@ -14,16 +14,16 @@ adduser eve i2c
 echo "dtparam=i2c_arm=on" >> /boot/firmware/config.txt
 echo "i2c-dev" >> /etc/modules
 
-#Git Clone Repo
-mkdir /eve
-git clone https://github.com/hw5e/eve-pi.git /eve -b test
-
-
 
 #Install Packages
 apt update -y && apt upgrade -y
 apt install -y git python3 python3-pip python3-dev python3-venv libatlas-base-dev
 #apt install -y nfs-kernel-server vim tmux
+
+#Git Clone Repo
+mkdir /eve
+git clone https://github.com/hw5e/eve-pi.git /eve -b test
+
 
 python3 -m venv /eve/venv
 
